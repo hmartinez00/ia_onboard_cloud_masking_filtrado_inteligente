@@ -1,0 +1,21 @@
+\section{Discusión}
+
+\subsection{6.1 Análisis de Trade-offs}
+
+Resulta revelador observar cómo los trade-offs entre precisión y eficiencia definen el éxito real de cualquier sistema on-board. Nuestros modelos logran accuracies competitivas con arquitecturas mucho más complejas, pero no sin concesiones. Comparados directamente con DTACSNet, por ejemplo, sacrificamos cierta versatilidad multi-tarea a cambio de una latencia notablemente inferior y menor huella de memoria \cite{Aybar2024_DTACSNet}.
+
+Particularmente llamativo es el comportamiento en escenarios de cobertura nubosa parcial: aquí el pipeline híbrido destaca por su capacidad de decisión granular, aunque tiende a ser más conservador en la retención de datos. Uno de los desafíos persistentes que surge al analizar estos resultados radica en la calibración fina de los umbrales de filtrado. En muchos casos estudiados, un ajuste demasiado agresivo reduce el downlink de forma drástica pero puede descartar escenas con valor científico marginalmente nubladas. No obstante, cabe matizar que este comportamiento es preferible a la transmisión indiscriminada de datos mayoritariamente inútiles.
+
+\subsection{6.2 Robustez ante Radiación y Variabilidad}
+
+Lejos de ser un asunto resuelto, la robustez ante las condiciones extremas del entorno espacial sigue representando uno de los cuellos de botella más difíciles. Aunque las técnicas de pruning y cuantización mejoran la eficiencia, también introducen sensibilidades adicionales a errores de bit inducidos por radiación. Nuestras pruebas de inyección de fault muestran que las versiones INT8 mantienen una degradación más gradual que las representaciones de punto flotante, pero requieren mecanismos de scrubbing periódicos.
+
+En nuestra experiencia acumulada trabajando con datos satelitales reales, la variabilidad espectral entre misiones diferentes afecta más a los modelos puramente convolucionales que a los enfoques híbridos. El componente de gradient boosting actúa como regularizador natural, mejorando la estabilidad general. Aun así, persisten limitaciones importantes en condiciones de aurora o eventos solares intensos, donde el ruido no estacionario puede elevar la tasa de falsos positivos.
+
+\subsection{6.3 Impacto en Misiones Futuras}
+
+Aunque los enfoques tradicionales han aportado valiosas lecciones, el verdadero potencial aparece cuando se integra el cloud masking inteligente en el ciclo operativo completo de las misiones. Proyectos demostradores como Φ-sat-2 ya han mostrado reducciones sustanciales en volumen de datos transmitidos, validando el concepto en condiciones reales de órbita \cite{KP_Labs2024_PhiSat}. Nuestros resultados sugieren que es posible ir más allá: no solo filtrar nubes, sino priorizar dinámicamente según criterios científicos específicos de cada pasada.
+
+Esta capacidad transforma el paradigma de diseño de misiones. En lugar de dimensionar enlaces de comunicaciones para el peor caso, los ingenieros podrán optimizar para el caso promedio útil, liberando recursos para más sensores o mayor resolución. Particularmente prometedor resulta el impacto en constelaciones de CubeSats, donde el presupuesto de potencia y ancho de banda es extremadamente ajustado.
+
+En conjunto, las arquitecturas propuestas no eliminan todas las limitaciones identificadas en el estado del arte, pero sí desplazan las fronteras de lo práctico. Queda trabajo por delante en áreas como adaptación continua en órbita y certificación de fiabilidad para misiones críticas, pero el camino hacia una observación terrestre más inteligente y eficiente parece claramente trazado.

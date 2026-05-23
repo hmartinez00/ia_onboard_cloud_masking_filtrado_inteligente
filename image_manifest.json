@@ -1,0 +1,20 @@
+{
+    "fig1.png": {
+        "prompt_ia": "2D technical vector diagram, engineering schematic, flat design, minimalista, fondo blanco puro, colores azul cobalto #0047AB y gris técnico #4A4A4A con acentos negros, sin sombras, sin gradientes, sin texto incrustado. Diagrama de flujo horizontal de pipeline on-board: bloque Satélite Sensor Multispectral → Preprocesamiento → Cloud Masking AI (CNN ligera) → Filtrado Inteligente → Decisión Downlink Selectivo (útil / nublado) → Transmisor. Flechas claras con etiquetas conceptuales en placeholders, iconos minimalistas de satélite, nube y CPU, layout limpio IEEE style, orientación landscape técnica."
+    },
+    "fig2.png": {
+        "prompt_ia": "2D technical vector diagram, engineering schematic, flat design, minimalista, fondo blanco puro, colores azul cobalto #0047AB y gris técnico #4A4A4A con acentos negros, sin sombras, sin gradientes, sin texto incrustado. Diagrama de arquitectura CNN: bloques rectangulares conectados por flechas mostrando Input Multi-spectral Bands → Feature Reduction Module → Lightweight Conv Blocks (3-4 stages) → Light Attention → Output Cloud Mask. Iconos minimalistas de capas convolucionales y feature maps simplificados, layout vertical claro y técnico estilo IEEE, orientación portrait."
+    },
+    "fig3.png": {
+        "prompt_ia": "2D technical vector diagram, engineering schematic, flat design, minimalista, fondo blanco puro, colores azul cobalto #0047AB y gris técnico #4A4A4A con acentos negros, sin sombras, sin gradientes, sin texto incrustado. Gráfico de curvas de trade-off: ejes Latencia (ms) horizontal y Consumo Energético (W) vertical. Múltiples líneas coloreadas para configuraciones FP32 (baseline), INT8, Mixed INT4/8 y Sparse. Puntos marcados con marcadores circulares, etiquetas conceptuales en placeholders, leyenda minimalista, grid sutil, estilo técnico IEEE limpio, orientación landscape."
+    },
+    "fig4.png": {
+        "prompt_ia": "2D technical vector diagram, engineering schematic, flat design, minimalista, fondo blanco puro, colores azul cobalto #0047AB y gris técnico #4A4A4A con acentos negros, sin sombras, sin gradientes, sin texto incrustado. Paneles comparativos en cuadrícula 2x2 o horizontal: Imagen Original (falsa color multi-espectral) | Ground Truth Mask | Predicción Modelo | Mapa de Diferencia (errores). Iconos minimalistas de satélite y nube, flechas conectando los paneles, bordes limpios, estilo técnico IEEE, orientación landscape para mostrar ejemplos claros de máscaras de nubes."
+    },
+    "fig6.png": {
+        "prompt_ia": "2D technical vector diagram, engineering schematic, flat design, minimalista, fondo blanco puro, colores azul cobalto #0047AB y gris técnico #4A4A4A con acentos negros, sin sombras, sin gradientes, sin texto incrustado. Diagrama conceptual de trade-offs: ejes Accuracy vs Eficiencia Energética vs Robustez a Radiación. Regiones sombreadas comparando Baseline (DTACSNet), Modelos Lightweight y Pipeline Propuesto. Iconos minimalistas de satélite, escudo de radiación y flecha de downlink reducido, flechas conectando componentes, layout limpio estilo IEEE, orientación landscape."
+    },
+    "fig7.png": {
+        "prompt_ia": "2D technical vector diagram, engineering schematic, flat design, minimalista, fondo blanco puro, colores azul cobalto #0047AB y gris técnico #4A4A4A con acentos negros, sin sombras, sin gradientes, sin texto incrustado. Diagrama conceptual de resumen: ciclo cerrado mostrando Arquitectura Propuesta → Resultados Clave (Accuracy, Eficiencia, Robustez) → Impacto en Misiones Futuras → Flecha de retroalimentación a Trabajos Futuros. Iconos minimalistas de satélite, nube, CPU y escudo, nodos conectados con flechas gruesas, layout limpio y equilibrado estilo IEEE, orientación landscape."
+    }
+}

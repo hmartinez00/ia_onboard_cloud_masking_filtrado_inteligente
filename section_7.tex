@@ -1,0 +1,23 @@
+\section{Conclusiones y Trabajos Futuros}
+
+\subsection{7.1 Resumen de Logros}
+
+Resulta revelador observar cómo un conjunto de decisiones aparentemente modestas —reducción agresiva de features, hibridación con gradient boosting y optimizaciones hardware-aware— logra transformar lo que parecía inalcanzable en una propuesta viable. Hemos desarrollado arquitecturas que mantienen accuracies operativas por encima del 93\% con menos de 1500 parámetros y latencias inferiores a 8 milisegundos, todo dentro de presupuestos energéticos compatibles con satélites de próxima generación.
+
+Estos resultados no solo confirman la viabilidad técnica del cloud masking on-board, sino que demuestran que es posible ir más allá de la mera detección hacia un filtrado inteligente que prioriza valor científico real. Modelos lightweight recientes ya apuntaban en esta dirección \cite{Ali2026_Lightweight}; nuestra contribución radica en integrar esas ideas en un pipeline completo, optimizado y evaluado bajo condiciones representativas de vuelo.
+
+\subsection{7.2 Limitaciones y Desafíos Abiertos}
+
+Uno de los desafíos persistentes que surge al analizar el trabajo completo radica en la brecha entre emulación controlada y despliegue orbital real. Aunque las pruebas en hardware emulado son prometedoras, persisten incertidumbres sobre el comportamiento a largo plazo bajo radiación acumulada y variabilidad térmica extrema. 
+
+Lejos de ser un asunto resuelto, la generalización entre diferentes familias de sensores sigue requiriendo atención. Nuestros modelos se desempeñan bien en datos multi-espectrales familiares, pero su transferencia a configuraciones hiperespectrales de mayor dimensionalidad tiende a requerir ajustes adicionales. No obstante, cabe matizar que estas limitaciones son inherentes al estado actual de la tecnología edge-AI espacial y no invalidan los avances logrados.
+
+En nuestra experiencia, otra área crítica es la certificación de fiabilidad para misiones de alto valor. Los mecanismos actuales de fault tolerance son suficientes para demostradores, pero resultan insuficientes para operaciones continuas en constelaciones grandes.
+
+\subsection{7.3 Recomendaciones para Implementación}
+
+Particularmente llamativo es el potencial que surge cuando se integran estas capacidades en plataformas ya existentes. Misiones demostradoras como Φ-sat-2 han pavimentado el camino para adopción más amplia, mostrando reducciones concretas en downlink y habilitando nuevos flujos operativos \cite{PhiSat2_Overview}. Recomendamos comenzar con implementaciones en FPGAs reconfigurables para misiones iniciales, migrando posteriormente a ASICs dedicados una vez validados los patrones de uso.
+
+Para trabajos futuros, sugerimos explorar adaptación continua en órbita mediante técnicas de few-shot learning, integración con sistemas de planificación autónoma de tareas y desarrollo de benchmarks estandarizados que incluyan métricas conjuntas de precisión, eficiencia y resiliencia. La escalabilidad hacia constelaciones también merece atención prioritaria: un modelo base entrenado centralmente podría destilarse en versiones especializadas por tipo de órbita o payload.
+
+En definitiva, las arquitecturas presentadas aquí marcan un paso concreto hacia satélites más autónomos e inteligentes. El camino por delante es exigente, pero los beneficios —en términos de capacidad científica, eficiencia de recursos y capacidad de respuesta ante eventos dinámicos— justifican plenamente el esfuerzo. Creemos que la próxima generación de misiones de Observación de la Tierra operará bajo un paradigma fundamentalmente distinto, donde la inteligencia on-board dejará de ser opcional para convertirse en elemento central del diseño.

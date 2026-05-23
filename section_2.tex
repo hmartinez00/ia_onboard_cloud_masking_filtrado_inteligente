@@ -1,0 +1,38 @@
+\section{Estado del Arte}
+
+\subsection{2.1 Métodos Basados en Umbrales y Física}
+
+Aunque los enfoques basados en umbrales y propiedades físicas dominaron durante décadas el procesamiento de imágenes satelitales, sus limitaciones se vuelven cada vez más evidentes ante la creciente resolución y variedad espectral de los sensores actuales. Estos métodos explotan características como el alto albedo de las nubes en bandas visibles o su baja temperatura en infrarrojo térmico. Resulta revelador observar cómo algoritmos clásicos como el ACCA o el Fmask siguen empleándose en pipelines operacionales de Landsat y Sentinel precisamente por su simplicidad y predictibilidad.
+
+No obstante, cabe matizar que su rendimiento tiende a degradarse drásticamente en presencia de nubes finas, nieve, hielo o superficies brillantes. En muchos casos estudiados, generan falsos positivos que comprometen la integridad de series temporales completas. La literatura reciente sugiere que, si bien ofrecen baja complejidad computacional, sacrifican la adaptabilidad necesaria para misiones de próxima generación donde la variabilidad atmosférica y superficial es elevada.
+
+\subsection{2.2 Enfoques de Deep Learning Ground-Based}
+
+Particularmente llamativo es el salto cualitativo que han experimentado los métodos basados en aprendizaje profundo cuando se aplican en entornos ground-based. Revisiones exhaustivas categorizan estos enfoques en redes convolucionales profundas, transformers y combinaciones híbridas, destacando mejoras sustanciales en precisión y robustez respecto a los métodos tradicionales \cite{Anzalone2024_Review}. 
+
+Uno de los desafíos persistentes que surge al analizar esta literatura radica en la brecha entre accuracies reportadas en papers —frecuentemente superiores al 95\%— y su viabilidad real en satélites. Modelos complejos con millones de parámetros brillan en servidores terrestres pero resultan impracticables para inferencia on-board. Aunque aportan valiosas lecciones sobre extracción de características multi-espectrales, tienden a ignorar restricciones críticas de energía, memoria y radiación.
+
+\subsection{2.3 Soluciones On-Board Existentes y Misiones Demo}
+
+Lejos de ser un asunto resuelto, el paso hacia soluciones verdaderamente on-board revela tanto promesas como compromisos inevitables. Misiones demostradoras como Φ-sat-2 han validado en órbita la capacidad de algoritmos de IA para realizar cloud detection y reducir significativamente el volumen de datos transmitidos \cite{KP_Labs2024_PhiSat}. Estos experimentos en vuelo constituyen hitos importantes, aunque sus implementaciones aún operan con márgenes de mejora notables en términos de generalización.
+
+Arquitecturas recientes como DTACSNet ilustran el potencial de integrar detección de nubes y corrección atmosférica en flujos unificados, logrando sólidos F2-scores en condiciones operativas \cite{Aybar2024_DTACSNet}. De forma complementaria, propuestas basadas en modelos boosting y CNNs ultra-ligeras demuestran que es posible alcanzar más del 93\% de accuracy con apenas cientos de parámetros, facilitando su ejecución en hardware restringido \cite{Ali2026_Lightweight}.
+
+\begin{table}[h]
+\centering
+\caption{Comparativa de accuracies, complejidad computacional y adecuación on-board de métodos representativos de cloud masking}
+\label{tab:comparison}
+\begin{tabular}{lcccc}
+\toprule
+Método & Tipo & Accuracy (\%) & Parámetros (aprox.) & Adecuación On-Board \\
+\midrule
+Umbral-based (Fmask) & Física & 85--92 & N/A & Alta \\
+CNN profundas (ground) & DL & 94--97 & >10M & Baja \\
+DTACSNet \cite{Aybar2024_DTACSNet} & CNN eficiente & 93+ & Medio & Media-Alta \\
+Modelos lightweight \cite{Ali2026_Lightweight} & Boosting+CNN & 93--95 & <600 & Alta \\
+Φ-sat-2 approach \cite{KP_Labs2024_PhiSat} & On-orbit demo & Operacional & Bajo & Validada \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+En conjunto, estas iniciativas ponen de manifiesto una brecha clara: mientras los avances en tierra priorizan la máxima precisión, las soluciones espaciales deben optimizar la eficiencia bajo restricciones extremas. Esta tensión define el núcleo de las contribuciones que se desarrollan en las siguientes secciones.
