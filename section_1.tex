@@ -6,7 +6,7 @@ Aunque los sensores satelitales modernos generan volúmenes de datos sin precede
 
 Modelos recientes demuestran que es posible alcanzar accuracies superiores al 93\% con arquitecturas extremadamente ligeras, capaces de ejecutarse en hardware con recursos limitados \cite{Ali2026_Lightweight}. Estos avances no solo reducen drásticamente el volumen de datos transmitidos, sino que habilitan aplicaciones críticas como monitorización en tiempo real de desastres, agricultura de precisión y respuesta climática. Lejos de ser un refinamiento incremental, el cloud masking on-board representa un cambio paradigmático en la forma en que concebimos las misiones de Observación de la Tierra.
 
-\begin{table}[h]
+\begin{table*}[h]
 \centering
 \caption{Comparación de requisitos computacionales y de downlink en misiones satelitales representativas}
 \label{tab:requirements}
@@ -19,7 +19,7 @@ On-board básico & 40--80 & Medio \\
 Propuesta (esta trabajo) & <25 & Bajo \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 \subsection{1.2 Desafíos Computacionales en Entornos Espaciales}
 
@@ -31,7 +31,7 @@ Arquitecturas como DTACSNet ilustran tanto el potencial como las dificultades in
 
 Este trabajo aborda precisamente esa brecha. Desarrollamos arquitecturas de inferencia optimizadas específicamente para cloud masking y filtrado inteligente que combinan CNNs reducidas con técnicas de boosting, todo bajo estrictas restricciones de satélites de próxima generación. Demostramos que es posible mantener alto rendimiento predictivo mientras se reduce drásticamente la complejidad computacional.
 
-Nuestras contribuciones incluyen un pipeline completo de procesamiento on-board (ver Figura~\ref{fig:pipeline}), una evaluación exhaustiva en hardware emulado y comparaciones sistemáticas contra enfoques del estado del arte. Misiones demostradoras como Φ-sat-2 ya han validado el concepto de filtrado inteligente en órbita, estableciendo un precedente sólido para implementaciones más ambiciosas \cite{PhiSat2_Overview}. 
+Nuestras contribuciones incluyen un pipeline completo de procesamiento on-board (ver Figura~\ref{fig:pipeline}), una evaluación exhaustiva en hardware emulado y comparaciones sistemáticas contra enfoques del estado del arte. Misiones demostradoras como $\Phi$-sat-2 ya han validado el concepto de filtrado inteligente en órbita, estableciendo un precedente sólido para implementaciones más ambiciosas \cite{PhiSat2_Overview}. 
 
 \begin{figure}[h]
 \centering

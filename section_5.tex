@@ -14,7 +14,7 @@ Lejos de ser un detalle secundario, las métricas de eficiencia definen la viabi
 
 La Tabla~\ref{tab:results} resume las comparativas principales. Nuestros diseños logran reducir el número de operaciones en más de un orden de magnitud respecto a baselines profundas, manteniendo accuracies operativas por encima del 93\%. El tiempo de inferencia por patch cae consistentemente por debajo de los 10 milisegundos en configuraciones INT8, un umbral crítico para procesamiento continuo en órbita.
 
-\begin{table}[h]
+\begin{table*}[h]
 \centering
 \caption{Resultados comparativos de accuracy y eficiencia entre el enfoque propuesto y baselines representativos}
 \label{tab:results}
@@ -27,7 +27,7 @@ Modelos lightweight \cite{Ali2026_Lightweight} & 94.2 & 0.93 & 597 & 1.2 & 9.8 \
 Pipeline propuesto (INT8) & 93.9 & 0.935 & <1.5k & 1.8 & 7.1 \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 Aunque estos números parecen prometedores, conviene señalar que la eficiencia real depende fuertemente de la implementación hardware. Las ganancias más significativas aparecen precisamente cuando se combinan las optimizaciones de pruning y cuantización descritas previamente.
 

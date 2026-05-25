@@ -14,11 +14,11 @@ Uno de los desafíos persistentes que surge al analizar esta literatura radica e
 
 \subsection{2.3 Soluciones On-Board Existentes y Misiones Demo}
 
-Lejos de ser un asunto resuelto, el paso hacia soluciones verdaderamente on-board revela tanto promesas como compromisos inevitables. Misiones demostradoras como Φ-sat-2 han validado en órbita la capacidad de algoritmos de IA para realizar cloud detection y reducir significativamente el volumen de datos transmitidos \cite{KP_Labs2024_PhiSat}. Estos experimentos en vuelo constituyen hitos importantes, aunque sus implementaciones aún operan con márgenes de mejora notables en términos de generalización.
+Lejos de ser un asunto resuelto, el paso hacia soluciones verdaderamente on-board revela tanto promesas como compromisos inevitables. Misiones demostradoras como $\Phi$-sat-2 han validado en órbita la capacidad de algoritmos de IA para realizar cloud detection y reducir significativamente el volumen de datos transmitidos \cite{KP_Labs2024_PhiSat}. Estos experimentos en vuelo constituyen hitos importantes, aunque sus implementaciones aún operan con márgenes de mejora notables en términos de generalización.
 
 Arquitecturas recientes como DTACSNet ilustran el potencial de integrar detección de nubes y corrección atmosférica en flujos unificados, logrando sólidos F2-scores en condiciones operativas \cite{Aybar2024_DTACSNet}. De forma complementaria, propuestas basadas en modelos boosting y CNNs ultra-ligeras demuestran que es posible alcanzar más del 93\% de accuracy con apenas cientos de parámetros, facilitando su ejecución en hardware restringido \cite{Ali2026_Lightweight}.
 
-\begin{table}[h]
+\begin{table*}[h]
 \centering
 \caption{Comparativa de accuracies, complejidad computacional y adecuación on-board de métodos representativos de cloud masking}
 \label{tab:comparison}
@@ -30,9 +30,9 @@ Umbral-based (Fmask) & Física & 85--92 & N/A & Alta \\
 CNN profundas (ground) & DL & 94--97 & >10M & Baja \\
 DTACSNet \cite{Aybar2024_DTACSNet} & CNN eficiente & 93+ & Medio & Media-Alta \\
 Modelos lightweight \cite{Ali2026_Lightweight} & Boosting+CNN & 93--95 & <600 & Alta \\
-Φ-sat-2 approach \cite{KP_Labs2024_PhiSat} & On-orbit demo & Operacional & Bajo & Validada \\
+$\Phi$-sat-2 approach \cite{KP_Labs2024_PhiSat} & On-orbit demo & Operacional & Bajo & Validada \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 En conjunto, estas iniciativas ponen de manifiesto una brecha clara: mientras los avances en tierra priorizan la máxima precisión, las soluciones espaciales deben optimizar la eficiencia bajo restricciones extremas. Esta tensión define el núcleo de las contribuciones que se desarrollan en las siguientes secciones.
